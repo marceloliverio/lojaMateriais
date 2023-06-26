@@ -1,4 +1,4 @@
-package com.materiais.cliente;
+package br.com.lojamateriais.cliente;
 
 import jakarta.validation.constraints.NotBlank;
 

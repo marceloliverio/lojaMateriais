@@ -1,19 +1,20 @@
-package com.materiais.controllers;
+package br.com.lojamateriais.controllers;
 
-import com.materiais.cliente.ClienteRepository;
-import com.materiais.cliente.DadosAtualizacaoCliente;
-import com.materiais.cliente.DadosCadastroCliente;
-import com.materiais.cliente.DadosListagemCliente;
-import com.materiais.loja.Cliente;
+import br.com.lojamateriais.cliente.ClienteRepository;
+import br.com.lojamateriais.cliente.DadosAtualizacaoCliente;
+import br.com.lojamateriais.cliente.DadosCadastroCliente;
+import br.com.lojamateriais.cliente.DadosListagemCliente;
+import br.com.lojamateriais.loja.Cliente;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("cliente")
 public class ClienteController {
 
@@ -27,6 +28,7 @@ public class ClienteController {
         repository.save(new Cliente(dados));
     }
 
+    @GetMapping
     public Page<DadosListagemCliente> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao ){
         return repository.findAllByAtivoTrue(paginacao).map(DadosListagemCliente::new);
     }
@@ -39,7 +41,7 @@ public class ClienteController {
 
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     @Transactional
     public void excluir(@PathVariable Long id){
         var cliente = repository.getReferenceById(id);

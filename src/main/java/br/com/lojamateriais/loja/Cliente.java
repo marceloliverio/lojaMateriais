@@ -1,10 +1,9 @@
-package com.materiais.loja;
+package br.com.lojamateriais.loja;
 
 
-import com.materiais.cliente.DadosAtualizacaoCliente;
-import com.materiais.cliente.DadosCadastroCliente;
+import br.com.lojamateriais.cliente.DadosAtualizacaoCliente;
+import br.com.lojamateriais.cliente.DadosCadastroCliente;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

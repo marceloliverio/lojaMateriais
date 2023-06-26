@@ -1,4 +1,4 @@
-package com.materiais.vendedor;
+package br.com.lojamateriais.vendedor;
 
 import jakarta.validation.constraints.NotBlank;
 
