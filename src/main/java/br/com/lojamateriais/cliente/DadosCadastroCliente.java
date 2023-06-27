@@ -16,6 +16,6 @@ public record DadosCadastroCliente(
         @Email
         String email,
         @NotBlank
-        Long telefone
+        String telefone
         ){
 }

@@ -8,7 +8,7 @@ public record DadosAtualizacaoCliente(
         String nome,
         String cpf,
         String email,
-        Long telefone
+        String telefone
 ) {
 }
 // nem todos os valores são de preenchimento obrigatório pois somente um dado pode ser alterado. O único obrigatório é o ID para informar qual cliente será alterado

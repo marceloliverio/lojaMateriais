@@ -30,10 +30,10 @@ public class ProdutoController {
         repository.save(new Produtos(dados));
     }
 
-    @GetMapping
-    public Page<DadosListagemProduto>listar(@PageableDefault (size = 10, sort = {"nomeProduto"}) Pageable paginacao){
-        return repository.findById(paginacao).map(DadosListagemProduto::new);
-    }
+//    @GetMapping
+//    public Page<DadosListagemProduto>listar(@PageableDefault (size = 10, sort = {"nomeProduto"}) Pageable paginacao){
+//        return repository.findById(paginacao).map(DadosListagemProduto::new);
+//    }
 
     @PutMapping
     @Transactional

@@ -27,7 +27,7 @@ public class Cliente {
 
     private String email;
 
-    private Long telefone;
+    private String telefone;
     public Boolean ativo = true;
 
     public Cliente (DadosCadastroCliente dados){
