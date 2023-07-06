@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Cadastro de Produto</title>
+
+</head>
+<body>
+<div layout:fragment="conteudo">
+    <h1> Vendas </h1>
+    <form method ="post" action="/vendasView">
+
+<!--        <input type="hidden" name="_method" value="put" th:if="${vendas != null}">-->
+<!--        <input type="hidden" name="id" th:value="${vendas?.id}">-->
+
+
+        <div>
+            <label>Selecione o Cliente:</label>
+            <select class="selector" id="idCliente" name="idCliente">
+                <option value="" text="selecione"></option>
+                <option th:each="c : ${clientes}" th:value="${c.id}" th:text="${c.nome}"></option>
+            </select>
+        </div>
+
+        <div>
+            <label>Selecione o Vendedor:</label>
+            <select class="selector" id="idVendedor" name="idVendedor">
+                <option value="" text="selecione"></option>
+                <option th:each="c : ${vendedores}" th:value="${c.id}" th:text="${c.nome}"></option>
+            </select>
+        </div>
+        <br><br><br>
+        <table>
+            <thead>
+            <tr>
+                <th>SELECIONADO</th>
+                <th>NOME</th>
+                <th>Quantidade</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="produto : ${produtos}">
+                <td><input type="checkbox" th:value="${produto.id}" name="produtos"/></td>
+                <td th:text="${produto.nome}"></td>
+                <td><input type="text" name="quantidade"/></td>
+            </tr>
+            </tbody>
+        </table>
+        <br><br><br>
+
+        <input type="submit" value="cadastrar">
+    </form>
+</div>
+</body>
+</html>

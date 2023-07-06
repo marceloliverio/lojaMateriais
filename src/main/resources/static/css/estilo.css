@@ -238,3 +238,17 @@ input[type="submit"] {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.selector{
+  width: 70vw;
+  border-radius: 24px;
+  display: block;
+  color: black;
+  padding: 1em
+
+}
+
+.submenu , tr, td{
+    border: 1px ;
+    border-spacing: 0;}
+

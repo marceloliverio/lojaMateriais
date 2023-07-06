@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+  <title>Lista de Produtos</title>
+
+</head>
+<body>
+<div layout:fragment="conteudo">
+  <h1> Lista de Produtos</h1>
+  <a href="/produtoView/cadastroProduto"><input type="submit" value ="NOVO"></a>
+  <table>
+    <thead>
+    <tr>
+      <th>NOME</th>
+      <th>VALOR</th>
+      <th>QUANTIDADE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="produto : ${vendas.teste}">
+      <td th:text="${produto.nome}"></td>
+      <td th:text="${produto.valor}"></td>
+      <td th:text="${produto.quantidade}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

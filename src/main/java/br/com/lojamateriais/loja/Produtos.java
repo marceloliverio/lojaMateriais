@@ -3,6 +3,7 @@ package br.com.lojamateriais.loja;
 
 import br.com.lojamateriais.produto.DadosAtualizacaoProduto;
 import br.com.lojamateriais.produto.DadosCadastroProduto;
+import br.com.lojamateriais.vendas.DadosCadastroVendas;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,6 +34,7 @@ public class Produtos {
         this.ativo = true;
 
     }
+
 
     public void atualizarInformacoes(DadosAtualizacaoProduto dados) {
         if (dados.nome() != null) {

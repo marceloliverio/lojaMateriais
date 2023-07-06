@@ -4,10 +4,7 @@ package br.com.lojamateriais.loja;
 import br.com.lojamateriais.cliente.DadosAtualizacaoCliente;
 import br.com.lojamateriais.cliente.DadosCadastroCliente;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Table(name="cliente")
 @Entity(name="Cliente")
@@ -15,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@ToString
 public class Cliente {
 
     @Id

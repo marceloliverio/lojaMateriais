@@ -1,0 +1,40 @@
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}">
+<head>
+    <title>Lista de Produtos</title>
+
+</head>
+<body>
+<div layout:fragment="conteudo">
+    <h1> Lista de Vendedor</h1>
+    <a href="/vendedorView/cadastroVendedor"><input type="submit" value ="NOVO"></a>
+    <table>
+        <thead>
+        <tr>
+            <th>NOME</th>
+            <th>MATRICULA</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vendedor : ${lista}">
+            <td th:text="${vendedor.nome}"></td>
+            <td th:text="${vendedor.matricula}"></td>
+
+            <td>
+                <a th:href="@{/vendedorView/cadastroVendedor?id={id}(id=${vendedor.id})}">Editar</a>
+
+                <form action="/vendedorView" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="hidden" name="id" th:value="${vendedor.id}">
+                    <input type="submit" value="excluir">
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
